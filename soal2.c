@@ -24,7 +24,7 @@ int main() {
     if (scanf("%d", &N) != 1) return 0;
 
     int** Data1 = (int**)malloc(N * sizeof(int*));
-    int* visited = (int*)calloc(N, sizeof(int)); d
+    int* visited = (int*)calloc(N, sizeof(int));
 
 
     for (int i = 0; i < N; i++) {
