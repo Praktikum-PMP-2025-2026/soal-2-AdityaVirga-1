@@ -36,7 +36,7 @@ int main() {
     for (int i = 0; i < N; i++) {
         int a;
         scanf("%d", &a);
-        adj_matrix[a] = 1;
+        adj_matrix[a] == 1;
     }
 
     int cycle = 0;
