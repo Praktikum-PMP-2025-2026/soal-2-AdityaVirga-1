@@ -26,9 +26,9 @@ int main() {
     int** Data1 = (int**)malloc(N * sizeof(int*));
     int* visited = (int*)calloc(N, sizeof(int));
 
-
     for (int i = 0; i < N; i++) {
         scanf("%d", Data1[i]);
+        Data1[i] = 1;
     }
 
     int cycle = 0;
