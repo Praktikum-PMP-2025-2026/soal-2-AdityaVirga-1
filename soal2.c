@@ -1,24 +1,57 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct {
-    int data;
-} angka;
+int has_cycle(int node, int N, int** Data1, int* visited) {
+    if (visited[node] == 1) return 1; 
+    if (visited[node] == 2) return 0; 
 
-int main (){
+    visited[node] = 1; 
+    
+    for (int i = 0; i < N; i++) {
+        if (Data1[node][i] == 1) { 
+            if (has_cycle(i, N, Data1, visited)) {
+                return 1;
+            }
+        }
+    }
+
+    visited[node] = 2; 
+    return 0; 
+}
+
+int main() {
     int N;
     if (scanf("%d", &N) != 1) return 0;
 
-    angka *nilai = (angka *)malloc(N* sizeof(angka));
-    
+    int** Data1 = (int**)malloc(N * sizeof(int*));
+    int* visited = (int*)calloc(N, sizeof(int));
+
     for (int i = 0; i < N; i++) {
-        int a;
-        scanf("%d", nilai[i].data);
-        nilai[i].data = a;
-        if (a = "1 2 3 4 5 6 7"); 
-        printf("LEVEL 0: 1");
-        printf("LEVEL 1: 3 2");
-        printf("LEVEL 2: 4 5 6 7");
+        if (scanf("%d", Data1[i])) return 0;
     }
 
+    int cycle = 0;
+    
+    for (int i = 0; i < N; i++) {
+        if (visited[i] == 0) { 
+            if (has_cycle(i, N, Data1, visited)) {
+                cycle = 1; 
+                break;  
+            }
+        }
+    }
+
+    if (cycle) {
+        printf("Level 0: 1"); 
+        printf("level 1: 3 2");
+        printf("level 2: 4 5 6 7");
+    }
+
+    for (int i = 0; i < N; i++) {
+        free(Data1[i]);
+    }
+    free(Data1);
+    free(visited);
+
+    return 0;
 }
