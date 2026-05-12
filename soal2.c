@@ -30,7 +30,7 @@ int main() {
     for (int i = 0; i < N; i++) {
         int a;
         scanf("%d", &a);
-        Data[a] = i;
+        Data[i] = a;
     }
 
     int cycle = 0;
