@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int has_cycle(int node, int N, int** adj_matrix, int* visited) {
+int has_cycle(int node, int N, int** Data1, int* visited) {
     if (visited[node] == 1) return 1; 
     if (visited[node] == 2) return 0; 
 
     visited[node] = 1; 
     
     for (int i = 0; i < N; i++) {
-        if (adj_matrix[node][i] == 1) { 
-            if (has_cycle(i, N, adj_matrix, visited)) {
+        if (Data1[node][i] == 1) { 
+            if (has_cycle(i, N, Data1, visited)) {
                 return 1;
             }
         }
@@ -22,7 +22,6 @@ int has_cycle(int node, int N, int** adj_matrix, int* visited) {
 int main() {
     int N;
     if (scanf("%d", &N) != 1) return 0;
-
 
     int** Data1 = (int**)malloc(N * sizeof(int*));
     int* visited = (int*)calloc(N, sizeof(int)); d
