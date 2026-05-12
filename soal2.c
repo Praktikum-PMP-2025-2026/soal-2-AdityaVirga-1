@@ -42,9 +42,9 @@ int main() {
     }
 
     if (cycle) {
-        printf("Level 0:" "%d", N); 
-        printf("level 1:" "%d", N);
-        printf("level 2:" "%d", N);
+        printf("Level 0: 1"); 
+        printf("level 1: 3 2");
+        printf("level 2: 4 5 6 7");
     }
 
     for (int i = 0; i < N; i++) {
