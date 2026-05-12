@@ -28,7 +28,7 @@ int main() {
 
 
     for (int i = 0; i < N; i++) {
-        scanf("%d", Data[i]);
+        scanf("%d", Data1[i]);
     }
 
     int cycle = 0;
