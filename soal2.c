@@ -27,7 +27,7 @@ int main() {
     int* visited = (int*)calloc(N, sizeof(int));
 
     for (int i = 0; i < N; i++) {
-        if (scanf("%d", Data1[i])) return 0;
+        scanf("%d", Data1[i]);
     }
 
     int cycle = 0;
